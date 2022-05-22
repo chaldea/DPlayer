@@ -26,28 +26,15 @@ class Titlabar {
 
     initBackButton() {
         if (this.player.template.titlebarBackButton) {
-            this.player.template.titlebarBackButton.addEventListener('click', () => {
+            this.player.template.titlebarBackButton.addEventListener('click', (e) => {
+                e.preventDefault();
                 this.player.events.trigger('titlebar_back');
             });
         }
     }
 
     initPlayButton() {
-        this.player.template.playButton.addEventListener('click', () => {
-            this.player.toggle();
-        });
-
-        this.player.template.mobilePlayButton.addEventListener('click', () => {
-            this.player.toggle();
-        });
-
         if (!utils.isMobile) {
-            this.player.template.videoWrap.addEventListener('click', () => {
-                this.player.toggle();
-            });
-            this.player.template.controllerMask.addEventListener('click', () => {
-                this.player.toggle();
-            });
         } else {
             this.player.template.videoWrap.addEventListener('click', () => {
                 this.toggle();

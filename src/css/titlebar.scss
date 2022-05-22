@@ -5,22 +5,24 @@
     right: 0;
     color: #fff;
     transition: all 0.3s ease;
-    font-size: 14px;
+    font-size: 15px;
     padding: 10px 0px 0px 0px;
     display: flex;
     flex-direction: row;
     align-items: center;
 
     .dplayer-titlebar-back-icon {
-        margin-left: 10px;
+        display: inline-flex;
+        min-width: 20px;
+        padding: 5px 10px;
         svg {
-            width: 14px;
-            height: 14px;
+            width: 15px;
+            height: 15px;
         }
     }
 
     .dplayer-titlebar-title {
-        margin-left: 10px;
         overflow: hidden;
+        display: flex;
     }
 }
