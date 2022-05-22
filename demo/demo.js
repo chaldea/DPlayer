@@ -71,6 +71,9 @@ function initPlayers() {
             id: '9E2E3368B56CDBB4',
             api: 'https://api.prprpr.me/dplayer/',
             addition: ['https://s-sh-17-dplayercdn.oss.dogecdn.com/1678963.json']
+        },
+        titlebar: {
+            title: '这是测试内容'
         }
     });
 
@@ -141,6 +144,10 @@ function initPlayers() {
             eventsEle.scrollTop = eventsEle.scrollHeight;
         });
     }
+
+    dp1.on('titlebar_back', () => {
+        console.log('back click');
+    })
 
     // dp3
     // window.dp3 = new DPlayer({

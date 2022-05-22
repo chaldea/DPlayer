@@ -168,13 +168,15 @@ class Controller {
     }
 
     initFullButton() {
-        this.player.template.browserFullButton.addEventListener('click', () => {
-            this.player.fullScreen.toggle('browser');
-        });
+        if (this.player.options.fullButton) {
+            this.player.template.browserFullButton.addEventListener('click', () => {
+                this.player.fullScreen.toggle('browser');
+            });
 
-        this.player.template.webFullButton.addEventListener('click', () => {
-            this.player.fullScreen.toggle('web');
-        });
+            this.player.template.webFullButton.addEventListener('click', () => {
+                this.player.fullScreen.toggle('web');
+            });
+        }
     }
 
     initVolumeButton() {

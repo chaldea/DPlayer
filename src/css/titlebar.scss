@@ -1,0 +1,26 @@
+.dplayer-titlebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #fff;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    padding: 10px 0px 0px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .dplayer-titlebar-back-icon {
+        margin-left: 10px;
+        svg {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    .dplayer-titlebar-title {
+        margin-left: 10px;
+        overflow: hidden;
+    }
+}

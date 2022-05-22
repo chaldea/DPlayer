@@ -18,6 +18,12 @@
         <span class="diplayer-loading-icon">{{@ icons.loading }}</span>
     </div>
 </div>
+{{ if options.titlebar && options.titlebar.title }}
+<div class="dplayer-titlebar">
+    <span class="dplayer-titlebar-back-icon">{{@ icons.back }}</span>
+    <span class="dplayer-titlebar-title">{{options.titlebar.title}}</span>
+</div>
+{{ /if }}
 <div class="dplayer-controller-mask"></div>
 <div class="dplayer-controller">
     <div class="dplayer-icons dplayer-comment-box">
@@ -183,6 +189,7 @@
                 </div>
             </div>
         </div>
+        {{ if options.fullButton }}
         <div class="dplayer-full">
             <button class="dplayer-icon dplayer-full-in-icon" data-balloon="{{ tran('Web full screen') }}" data-balloon-pos="up">
                 <span class="dplayer-icon-content">{{@ icons.fullWeb }}</span>
@@ -191,6 +198,7 @@
                 <span class="dplayer-icon-content">{{@ icons.full }}</span>
             </button>
         </div>
+        {{ /if }}
     </div>
     <div class="dplayer-bar-wrap">
         <div class="dplayer-bar-time hidden">00:00</div>
