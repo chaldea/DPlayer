@@ -1,0 +1,13 @@
+.github
+dist/
+.vscode/
+**/node_modules
+.dockerignore
+.gitignore
+.prettierignore
+npm-debug.log*
+yarn-error.log
+build
+example
+demo
+docs

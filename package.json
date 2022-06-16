@@ -1,6 +1,6 @@
 {
-    "name": "dplayer",
-    "version": "1.26.0",
+    "name": "@chaldea/dplayer",
+    "version": "1.0.0",
     "description": "Wow, such a lovely HTML5 danmaku video player",
     "main": "dist/DPlayer.min.js",
     "scripts": {
@@ -27,9 +27,6 @@
         "video",
         "html5"
     ],
-    "gitHooks": {
-        "pre-commit": "npm run format:staged"
-    },
     "author": "DIYgod",
     "license": "MIT",
     "bugs": {

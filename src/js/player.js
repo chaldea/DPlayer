@@ -14,6 +14,7 @@ import Bar from './bar';
 import Timer from './timer';
 import Bezel from './bezel';
 import Controller from './controller';
+import Titlabar from './titlebar';
 import Setting from './setting';
 import Comment from './comment';
 import HotKey from './hotkey';
@@ -76,6 +77,8 @@ class DPlayer {
         this.fullScreen = new FullScreen(this);
 
         this.controller = new Controller(this);
+
+        this.titlabar = new Titlabar(this);
 
         if (this.options.danmaku) {
             this.danmaku = new Danmaku({

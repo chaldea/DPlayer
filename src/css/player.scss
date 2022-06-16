@@ -190,6 +190,17 @@
             display: block;
         }
     }
+    &.dplayer-hide-titlebar {
+        .dplayer-titlebar {
+            opacity: 0;
+            transform: translateY(-100%);
+        }
+    }
+    &.dplayer-show-titlebar {
+        .dplayer-titlebar {
+            opacity: 1;
+        }
+    }
 }
 
 // To hide scroll bar, apply this class to <body>
