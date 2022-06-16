@@ -1,0 +1,19 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  VERSION: 0.1.0
+
+jobs:
+  package:
+    if: ${{ github.event_name == 'push' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Docker Build Npm
+        run: |
+          docker build --build-arg BUILD_ID=$GITHUB_RUN_NUMBER --build-arg NPM_TOKEN=${{secrets.NPM_TOKEN}} -t dplayer .

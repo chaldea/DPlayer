@@ -1,0 +1,14 @@
+.git
+.github
+demo
+node_modules
+docs
+src
+webpack
+.dockerignore
+.eslintignore
+.prettierignore
+.prettierrc
+.travis.yml
+Dockerfile
+yarn.lock
