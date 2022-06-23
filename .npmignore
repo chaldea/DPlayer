@@ -10,5 +10,6 @@ webpack
 .prettierignore
 .prettierrc
 .travis.yml
+copy.js
 Dockerfile
 yarn.lock

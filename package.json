@@ -3,9 +3,10 @@
     "version": "1.0.0",
     "description": "Wow, such a lovely HTML5 danmaku video player",
     "main": "dist/DPlayer.min.js",
+    "typings": "dist/index.d.ts",
     "scripts": {
         "start": "npm run dev",
-        "build": "cross-env NODE_ENV=production webpack --config webpack/prod.config.js --progress --display-error-details --colors",
+        "build": "cross-env NODE_ENV=production webpack --config webpack/prod.config.js --progress --display-error-details --colors && node copy.js",
         "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack/dev.config.js --watch --colors",
         "test": "eslint src webpack",
         "format": "eslint \"**/*.js\" --fix && prettier \"**/*.{js,json,md}\" --write",
