@@ -12,13 +12,13 @@ class Titlabar {
             this.player.container.addEventListener('click', () => {
                 this.setAutoHide();
             });
-            this.player.on('play', () => {
-                this.setAutoHide();
-            });
-            this.player.on('pause', () => {
-                this.setAutoHide();
-            });
         }
+        this.player.on('play', () => {
+            this.setAutoHide();
+        });
+        this.player.on('pause', () => {
+            this.setAutoHide();
+        });
 
         this.initBackButton();
         this.initPlayButton();

@@ -24,6 +24,7 @@
     <span class="dplayer-titlebar-title">{{options.titlebar.title}}</span>
 </div>
 {{ /if }}
+<div class="dplayer-speed-up hidden">&gt;&gt;倍速播放中</div>
 <div class="dplayer-controller-mask"></div>
 <div class="dplayer-controller">
     <div class="dplayer-icons dplayer-comment-box">
