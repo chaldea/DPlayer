@@ -14,13 +14,13 @@ class Controller {
             this.player.container.addEventListener('click', () => {
                 this.setAutoHide();
             });
-            this.player.on('play', () => {
-                this.setAutoHide();
-            });
-            this.player.on('pause', () => {
-                this.setAutoHide();
-            });
         }
+        this.player.on('play', () => {
+            this.setAutoHide();
+        });
+        this.player.on('pause', () => {
+            this.setAutoHide();
+        });
 
         this.initPlayButton();
         this.initThumbnails();

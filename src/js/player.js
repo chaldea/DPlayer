@@ -15,6 +15,7 @@ import Timer from './timer';
 import Bezel from './bezel';
 import Controller from './controller';
 import Titlabar from './titlebar';
+import Gesture from './gesture';
 import Setting from './setting';
 import Comment from './comment';
 import HotKey from './hotkey';
@@ -143,6 +144,8 @@ class DPlayer {
 
         this.contextmenu = new ContextMenu(this);
 
+        this.gesture = new Gesture(this);
+
         this.initVideo(this.video, (this.quality && this.quality.type) || this.options.video.type);
 
         this.infoPanel = new InfoPanel(this);
@@ -197,7 +200,7 @@ class DPlayer {
                 .catch(() => {
                     this.pause();
                 })
-                .then(() => {});
+                .then(() => { });
         }
         this.timer.enable('loading');
         this.container.classList.remove('dplayer-paused');
