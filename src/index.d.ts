@@ -12,6 +12,7 @@ export type VideoType = 'auto' | 'hls' | 'flv' | 'dash' | 'webtorrent' | 'normal
 export type SubTitleType = 'webvtt' | 'ass';
 export type DirectionType = 'top' | 'right' | 'bottom';
 export type FullScreenType = 'web' | 'browser';
+export type ImageFormat = 'image/jpeg' | 'image/png' | 'image/bmp';
 
 export interface DPlayerOptions {
   [key: string]: any;
@@ -34,6 +35,11 @@ export interface DPlayerOptions {
   contextmenu?: DPlayerContextMenuItem[] | undefined;
   highlight?: DPlayerHighLightItem[] | undefined;
   apiBackend?: DPlayerAPIBackend | undefined;
+  titlebar?: DPlayerTitlebar | undefined;
+}
+
+export interface DPlayerTitlebar {
+  title?: string
 }
 
 export interface DPlayerDanmakuItem {
@@ -143,4 +149,6 @@ export default class DPlayer {
   speed(rate: number): void;
 
   volume(percentage: number, nostorage: boolean, nonotice: boolean): void;
+
+  screenshot(type?: ImageFormat, quality?: number): string;
 }

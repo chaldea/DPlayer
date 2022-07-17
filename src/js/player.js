@@ -621,6 +621,14 @@ class DPlayer {
         this.events.trigger('destroy');
     }
 
+    screenshot(type = 'image/jpeg', quality = 0.5) {
+        const canvas = document.createElement('canvas');
+        canvas.width = this.video.videoWidth;
+        canvas.height = this.video.videoHeight;
+        canvas.getContext('2d').drawImage(this.video, 0, 0, canvas.width, canvas.height);
+        return canvas.toDataURL(type, quality);
+    }
+
     static get version() {
         /* global DPLAYER_VERSION */
         return DPLAYER_VERSION;
