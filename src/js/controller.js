@@ -120,13 +120,15 @@ class Controller {
             this.player.timer.enable('progress');
         };
 
-        this.player.template.playedBarWrap.addEventListener(utils.nameMap.dragStart, () => {
+        this.player.template.playedBarWrap.addEventListener(utils.nameMap.dragStart, (e) => {
+            e.preventDefault();
             this.player.timer.disable('progress');
             document.addEventListener(utils.nameMap.dragMove, thumbMove);
             document.addEventListener(utils.nameMap.dragEnd, thumbUp);
         });
 
         this.player.template.playedBarWrap.addEventListener(utils.nameMap.dragMove, (e) => {
+            e.preventDefault();
             if (this.player.video.duration) {
                 const px = this.player.template.playedBarWrap.getBoundingClientRect().left;
                 const tx = (e.clientX || e.changedTouches[0].clientX) - px;
@@ -144,7 +146,8 @@ class Controller {
             }
         });
 
-        this.player.template.playedBarWrap.addEventListener(utils.nameMap.dragEnd, () => {
+        this.player.template.playedBarWrap.addEventListener(utils.nameMap.dragEnd, (e) => {
+            e.preventDefault();
             if (utils.isMobile) {
                 this.thumbnails && this.thumbnails.hide();
             }

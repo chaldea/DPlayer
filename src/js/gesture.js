@@ -17,8 +17,10 @@ class Gesture {
     }
 
     touchstart(e) {
+        if (!this.player.video.duration) return;
+
         // 长按事件
-        if (!this.longTouchTimer) {
+        if (!this.longTouchTimer && !this.moveProgress) {
             this.longTouchTimer = setTimeout(() => {
                 // 如果是播放中
                 if (!this.player.paused) {
@@ -33,29 +35,30 @@ class Gesture {
 
         // 左右滑动进度条事件
         const target = e.target || e.srcElement || e.currentTarget;
-        // 进度条总长度(px) / 视频时长(s) = 像素点/s
-        this.pxPerSecond = target.clientWidth / this.player.video.duration;
+        /**
+         * 屏幕总宽度(px) / 视频时长(s) = 像素点/s
+         * offset: 调优参数，可以依据滑动屏幕的习惯来进行调优
+         */
+        this.pxPerSecond = target.clientWidth / this.player.video.duration + 25;
         this.beginX = e.touches ? e.touches[0].clientX : 0;
-        this.lastX = this.beginX;
     }
 
     touchMove(e) {
+        if (!this.player.video.duration) return;
+        // 如果在加速中，则忽略移动
+        if (this.speedUp) return;
+
         // 检测是否真的发生移动
         const currentX = e.touches ? e.touches[0].clientX : 0;
-        const delta = currentX - this.lastX;
-        if (Math.abs(delta) <= 3) return; // 取绝对值(右滑为正，左滑为负)
-
-        // 如果是移动，则移除长按事件
-        this.speedUp = false;
-        if (this.longTouchTimer) {
-            clearTimeout(this.longTouchTimer);
-            this.longTouchTimer = null;
-        }
+        const delta = currentX - this.beginX;
+        if (Math.abs(delta) <= 5) return; // 取绝对值(右滑为正，左滑为负)
         this.moveProgress = true;
         this.moveLength = delta;
     }
 
     touchend(e) {
+        if (!this.player.video.duration) return;
+
         if (this.longTouchTimer) {
             clearTimeout(this.longTouchTimer);
             this.longTouchTimer = null;
