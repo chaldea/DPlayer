@@ -81,26 +81,30 @@ class Setting {
             this.player.danmaku.opacity(this.player.user.get('opacity'));
 
             const danmakuMove = (event) => {
+                event.preventDefault();
                 const e = event || window.event;
                 let percentage = ((e.clientX || e.changedTouches[0].clientX) - utils.getBoundingClientRectViewLeft(this.player.template.danmakuOpacityBarWrap)) / dWidth;
                 percentage = Math.max(percentage, 0);
                 percentage = Math.min(percentage, 1);
                 this.player.danmaku.opacity(percentage);
             };
-            const danmakuUp = () => {
+            const danmakuUp = (event) => {
+                event.preventDefault();
                 document.removeEventListener(utils.nameMap.dragEnd, danmakuUp);
                 document.removeEventListener(utils.nameMap.dragMove, danmakuMove);
                 this.player.template.danmakuOpacityBox.classList.remove('dplayer-setting-danmaku-active');
             };
 
             this.player.template.danmakuOpacityBarWrapWrap.addEventListener('click', (event) => {
+                event.preventDefault();
                 const e = event || window.event;
                 let percentage = ((e.clientX || e.changedTouches[0].clientX) - utils.getBoundingClientRectViewLeft(this.player.template.danmakuOpacityBarWrap)) / dWidth;
                 percentage = Math.max(percentage, 0);
                 percentage = Math.min(percentage, 1);
                 this.player.danmaku.opacity(percentage);
             });
-            this.player.template.danmakuOpacityBarWrapWrap.addEventListener(utils.nameMap.dragStart, () => {
+            this.player.template.danmakuOpacityBarWrapWrap.addEventListener(utils.nameMap.dragStart, (event) => {
+                event.preventDefault();
                 document.addEventListener(utils.nameMap.dragMove, danmakuMove);
                 document.addEventListener(utils.nameMap.dragEnd, danmakuUp);
                 this.player.template.danmakuOpacityBox.classList.add('dplayer-setting-danmaku-active');
