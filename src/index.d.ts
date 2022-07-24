@@ -43,9 +43,11 @@ export interface DPlayerTitlebar {
 }
 
 export interface DPlayerDanmakuItem {
-  text: string;
-  color: string;
+  time: number;
   type: DirectionType;
+  color: number;
+  author: string;
+  text: string;
 }
 
 export interface DPlayerContextMenuItem {
@@ -95,9 +97,9 @@ export interface DPlayerDanmaku {
 }
 
 export interface DPlayerAPIBackend {
-  read(endpoint: any, callback: () => void): void;
+  read(options: any): void;
 
-  send(endpoint: any, danmakuData: DPlayerDanmakuItem, callback: () => void): void;
+  send(options: any): void;
 }
 
 export interface Danmaku {

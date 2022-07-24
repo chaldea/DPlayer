@@ -30,7 +30,7 @@ class Gesture {
                     this.player.template.speedUpItem.classList.remove('hidden');
                     this.player.speed(2); // 默认2倍加速
                 }
-            }, 1500);
+            }, 1200);
         }
 
         // 左右滑动进度条事件
@@ -39,7 +39,7 @@ class Gesture {
          * 屏幕总宽度(px) / 视频时长(s) = 像素点/s
          * offset: 调优参数，可以依据滑动屏幕的习惯来进行调优
          */
-        this.pxPerSecond = target.clientWidth / this.player.video.duration + 25;
+        this.pxPerSecond = target.clientWidth / this.player.video.duration + 15;
         this.beginX = e.touches ? e.touches[0].clientX : 0;
     }
 

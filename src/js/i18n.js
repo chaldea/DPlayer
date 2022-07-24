@@ -59,7 +59,7 @@ const tranTxt = {
         Volume: '音量',
         Live: '直播',
         'Video info': '视频统计信息',
-        SpeedUp: '>>倍速播放中',
+        SpeedUp: '倍速播放中',
     },
     'zh-tw': {
         'Danmaku is loading': '彈幕載入中',
@@ -100,7 +100,7 @@ const tranTxt = {
         Volume: '音量',
         Live: '直播',
         'Video info': '影片統計訊息',
-        SpeedUp: '>>倍速播放中',
+        SpeedUp: '倍速播放中',
     },
 };
 

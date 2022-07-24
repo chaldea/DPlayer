@@ -232,4 +232,14 @@
     word-wrap: normal;
     word-break: normal;
     pointer-events: none;
+
+    .dplayer-fast-forward-icon {
+        color: #fff;
+        margin-right: 5px;
+        svg {
+            color: #fff;
+            width: 15px;
+            height: 15px;
+        }
+    }
 }
