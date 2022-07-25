@@ -24,6 +24,17 @@
     <span class="dplayer-titlebar-title">{{options.titlebar.title}}</span>
 </div>
 {{ /if }}
+<div class="dplayer-playlist">
+    <div class="playlist-title">选集</div>
+    <div class="playlist-slice">
+        <div class="playlist-item">1</div>
+        <div class="playlist-item">2</div>
+        <div class="playlist-item">3</div>
+        <div class="playlist-item">4</div>
+        <div class="playlist-item">5</div>
+        <div class="playlist-item">6</div>
+    </div>
+</div>
 <div class="dplayer-speed-up hidden">
     <span class="dplayer-fast-forward-icon">{{@ icons.fastForward }}</span>
     <span>倍速播放中</span>

@@ -1,0 +1,32 @@
+.dplayer-playlist {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 60%;
+    height: 100vh;
+    width: 40%;
+    color: #fff;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    background: rgba(28, 28, 28, 0.9);
+    opacity: 0.5;
+    z-index: 100;
+    .playlist-title {
+        padding: 10px 6px;
+    }
+    .playlist-slice {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        .playlist-item {
+            width: calc(87% / 4);
+            margin-top: 5px;
+            margin-left: calc(10% / 5);
+            padding: 5px 0px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            color: #fff;
+            text-align: center;
+        }
+    }
+}
