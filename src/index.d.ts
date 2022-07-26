@@ -75,6 +75,11 @@ export interface DPlayerVideo {
   customType?: any;
   quality?: DPlayerVideoQuality[] | undefined;
   defaultQuality?: number | undefined;
+  id?: string;
+  name?: string;
+  title?: string;
+  status?: string;
+  seektime?: number;
 }
 
 export interface DPlayerSubTitle {
@@ -153,4 +158,6 @@ export default class DPlayer {
   volume(percentage: number, nostorage: boolean, nonotice: boolean): void;
 
   screenshot(type?: ImageFormat, quality?: number): string;
+
+  setTitle(title: string);
 }

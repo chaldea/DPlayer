@@ -28,7 +28,7 @@
     <div class="playlist-title">选集</div>
     <div class="playlist-slice">
         {{ each options.playlist }}
-            <div class="playlist-item">{{$index}}</div>
+            <div class="playlist-item {{$value.status}}">{{$value.name}}</div>
         {{ /each }}
     </div>
 </div>
