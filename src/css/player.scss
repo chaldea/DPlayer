@@ -201,6 +201,18 @@
             opacity: 1;
         }
     }
+    &.dplayer-hide-playlist {
+        .dplayer-playlist {
+            opacity: 0;
+        }
+    }
+    &.dplayer-show-playlist {
+        .dplayer-playlist {
+            display: block;
+            opacity: 0.5;
+            transform: translateX(-0%);
+        }
+    }
 }
 
 // To hide scroll bar, apply this class to <body>

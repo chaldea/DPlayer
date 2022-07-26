@@ -27,12 +27,9 @@
 <div class="dplayer-playlist">
     <div class="playlist-title">选集</div>
     <div class="playlist-slice">
-        <div class="playlist-item">1</div>
-        <div class="playlist-item">2</div>
-        <div class="playlist-item">3</div>
-        <div class="playlist-item">4</div>
-        <div class="playlist-item">5</div>
-        <div class="playlist-item">6</div>
+        {{ each options.playlist }}
+            <div class="playlist-item">{{$index}}</div>
+        {{ /each }}
     </div>
 </div>
 <div class="dplayer-speed-up hidden">
@@ -119,6 +116,9 @@
         {{ /if }}
     </div>
     <div class="dplayer-icons dplayer-icons-right">
+        <div class="dplayer-slice" data-balloon-pos="up">
+            <span class="dplayer-icon-content">选集</span>
+        </div>
         {{ if options.video.quality }}
         <div class="dplayer-quality">
             <button class="dplayer-icon dplayer-quality-icon">{{ options.video.quality[options.video.defaultQuality].name }}</button>

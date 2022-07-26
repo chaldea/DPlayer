@@ -25,6 +25,7 @@ export default (options) => {
         titlebar: {
             title: '',
         },
+        playlist: [],
     };
     for (const defaultKey in defaultOption) {
         if (defaultOption.hasOwnProperty(defaultKey) && !options.hasOwnProperty(defaultKey)) {

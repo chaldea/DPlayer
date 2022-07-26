@@ -16,6 +16,7 @@ import Bezel from './bezel';
 import Controller from './controller';
 import Titlabar from './titlebar';
 import Gesture from './gesture';
+import Playlist from './playlist';
 import Setting from './setting';
 import Comment from './comment';
 import HotKey from './hotkey';
@@ -80,6 +81,8 @@ class DPlayer {
         this.controller = new Controller(this);
 
         this.titlabar = new Titlabar(this);
+
+        this.playlist = new Playlist(this);
 
         if (this.options.danmaku) {
             this.danmaku = new Danmaku({

@@ -9,7 +9,9 @@
     transition: all 0.3s ease;
     transform: scale(1);
     background: rgba(28, 28, 28, 0.9);
-    opacity: 0.5;
+    display: none;
+    // pointer-events: none;
+    opacity: 0;
     z-index: 100;
     .playlist-title {
         padding: 10px 6px;
@@ -27,6 +29,14 @@
             border-radius: 5px;
             color: #fff;
             text-align: center;
+        }
+        .playlist-item.visited {
+            color: #c2c2c2;
+            border: 1px solid #c2c2c2;
+        }
+        .playlist-item.selected {
+            color: #ea7a99;
+            border: 1px solid #ea7a99;
         }
     }
 }

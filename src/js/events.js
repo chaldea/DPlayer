@@ -54,6 +54,7 @@ class Events {
             'subtitle_change',
             'titlebar_back',
             'speed_up',
+            'playlist_select',
         ];
     }
 
