@@ -632,6 +632,10 @@ class DPlayer {
         return canvas.toDataURL(type, quality);
     }
 
+    setTitle(title) {
+        this.titlabar.setTitle(title);
+    }
+
     static get version() {
         /* global DPLAYER_VERSION */
         return DPLAYER_VERSION;

@@ -45,6 +45,12 @@ class Titlabar {
         }
     }
 
+    setTitle(title) {
+        if (this.player.template.titlebarTitle) {
+            this.player.template.titlebarTitle.textContent = title;
+        }
+    }
+
     setAutoHide() {
         this.show();
         clearTimeout(this.autoHideTimer);

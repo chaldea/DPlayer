@@ -99,6 +99,7 @@ class Template {
         this.infoDanmakuApi = this.container.querySelector('.dplayer-info-panel-item-danmaku-api .dplayer-info-panel-item-data');
         this.infoDanmakuAmount = this.container.querySelector('.dplayer-info-panel-item-danmaku-amount .dplayer-info-panel-item-data');
         this.titlebarBackButton = this.container.querySelector('.dplayer-titlebar-back-icon');
+        this.titlebarTitle = this.container.querySelector('.dplayer-titlebar-title');
         this.speedUpItem = this.container.querySelector('.dplayer-speed-up');
         this.sliceButton = this.container.querySelector('.dplayer-slice');
         this.playlistItems = this.container.querySelectorAll('.playlist-item');
